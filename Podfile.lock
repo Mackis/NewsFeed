@@ -1,0 +1,24 @@
+PODS:
+  - BonMot (4.3.1)
+  - Hero (1.0.0-alpha.1)
+
+DEPENDENCIES:
+  - BonMot (~> 4.3.1)
+  - Hero (from `https://github.com/lkzhao/Hero`)
+
+EXTERNAL SOURCES:
+  Hero:
+    :git: https://github.com/lkzhao/Hero
+
+CHECKOUT OPTIONS:
+  Hero:
+    :commit: 8fbdc5345f7612ee619b33dbd4b0df7917d4ae1f
+    :git: https://github.com/lkzhao/Hero
+
+SPEC CHECKSUMS:
+  BonMot: 043bb5a8834cc6d74e9d624742272b92385e0a27
+  Hero: ac7db3fd993f82506fb402f5da71082ec051a16c
+
+PODFILE CHECKSUM: deac09f9ef4a5e259fe9e0d08ad72c96bffbb440
+
+COCOAPODS: 1.2.1
