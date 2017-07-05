@@ -27,7 +27,7 @@ class NewsFeedVC: UIViewController {
     
     let articles: [Article] = {
         let a1 = Article(category: "Music", title: "Jay-Z release new 4:44 album", time_stamp: "10 min ago", summary: "this is the summary", body: "this is the body")
-        return [a1, a1]
+        return [a1, a1, a1, a1]
     }()
     
     let backgroundImage: UIImageView = {
@@ -36,6 +36,17 @@ class NewsFeedVC: UIViewController {
         iv.clipsToBounds = true
         iv.image = #imageLiteral(resourceName: "placer")
         return iv
+    }()
+    
+    
+    let tipButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("MTIPPY!", for: .normal)
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.showsTouchWhenHighlighted = true
+        button.backgroundColor = UIColor.white
+        button.addTarget(self, action: #selector(showTip), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
@@ -54,10 +65,18 @@ class NewsFeedVC: UIViewController {
         view.backgroundColor = .red
         view.addSubview(backgroundImage)
         view.addSubview(collectionView)
+        view.addSubview(tipButton)
         
         // 2. Setup constraints
         backgroundImage.fillSuperview()
         collectionView.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 24, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 200)
+        
+        tipButton.anchorCenterSuperview()
+    }
+    
+    @objc func showTip(){
+        let mTip = MTippy()
+        mTip.present(.up, on: tipButton, with: "hey tippy tippy")
     }
     
 }
@@ -83,22 +102,9 @@ extension NewsFeedVC: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width - 20, height: collectionView.frame.height)
     }
 }
 
-extension NewsFeedVC: UIScrollViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let cellWidthWithSpacing = layout.itemSize.width + layout.minimumLineSpacing
-            var offSet = targetContentOffset.pointee
-            let index = (offSet.x + scrollView.contentInset.left) / cellWidthWithSpacing
-            let roundedIndex = round(index)
-            let offSetX = roundedIndex * cellWidthWithSpacing - scrollView.contentInset.left
-            let offSetY = -scrollView.contentInset.top
-            offSet = CGPoint(x: offSetX, y: offSetY)
-            targetContentOffset.pointee = offSet
-        }
-    }
-}
+
 

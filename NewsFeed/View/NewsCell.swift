@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BonMot
 
 class NewsCell: UICollectionViewCell {
     var article: Article? {
@@ -37,9 +38,10 @@ class NewsCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Worldpay, valued at $10B, confirms JPMorgan and Vantiv are trying to buy it"
         label.numberOfLines = 0
         label.textColor = .black
+        let title = "Jess Glynne channelled Beyonce during her Glastonbury set"
+        label.attributedText = title.styleTitle()
         return label
     }()
     
@@ -54,6 +56,7 @@ class NewsCell: UICollectionViewCell {
         addSubview(categoryBlock)
         categoryBlock.addSubview(categoryLabel)
         addSubview(titleLabel)
+       
         
         // 2. Setup constraints
         featureBlock.anchorCenterSuperview()
@@ -83,7 +86,7 @@ class NewsCell: UICollectionViewCell {
         categoryBlock.anchor(featureBlock.topAnchor, left: featureBlock.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 30, bottomConstant: 0, rightConstant: 0, widthConstant: 80, heightConstant: 30)
         categoryLabel.anchorCenterSuperview()
         
-        titleLabel.anchor(categoryBlock.bottomAnchor, left: featureBlock.leftAnchor, bottom: nil, right: featureBlock.rightAnchor, topConstant: 8, leftConstant: 8, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 80)
+        titleLabel.anchor(categoryBlock.bottomAnchor, left: featureBlock.leftAnchor, bottom: nil, right: featureBlock.rightAnchor, topConstant: 4, leftConstant: 8, bottomConstant: 0, rightConstant: 8, widthConstant: 0, heightConstant: 80)
         
     }
     

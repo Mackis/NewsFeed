@@ -10,6 +10,8 @@
 		91FFB9139D2D4BE29348E8FC /* Pods_NewsFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0CB95947EB78B0E52E5140 /* Pods_NewsFeed.framework */; };
 		9D7AE91A1F0CD893006CF66D /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7AE9191F0CD893006CF66D /* NewsCell.swift */; };
 		9D7AE91D1F0CD963006CF66D /* UIView+Anchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7AE91C1F0CD963006CF66D /* UIView+Anchors.swift */; };
+		9D9B91991F0D23A700065C0C /* String+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B91981F0D23A700065C0C /* String+Styles.swift */; };
+		9D9B91B91F0D2DDA00065C0C /* MTippy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B91B81F0D2DDA00065C0C /* MTippy.swift */; };
 		9DCBE2351F0CCFB700B2E182 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBE2341F0CCFB700B2E182 /* AppDelegate.swift */; };
 		9DCBE2371F0CCFB700B2E182 /* NewsFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCBE2361F0CCFB700B2E182 /* NewsFeedVC.swift */; };
 		9DCBE23C1F0CCFB700B2E182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DCBE23B1F0CCFB700B2E182 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		9B0CB95947EB78B0E52E5140 /* Pods_NewsFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7AE9191F0CD893006CF66D /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		9D7AE91C1F0CD963006CF66D /* UIView+Anchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchors.swift"; sourceTree = "<group>"; };
+		9D9B91981F0D23A700065C0C /* String+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Styles.swift"; sourceTree = "<group>"; };
+		9D9B91B81F0D2DDA00065C0C /* MTippy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTippy.swift; sourceTree = "<group>"; };
 		9DCBE2311F0CCFB700B2E182 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCBE2341F0CCFB700B2E182 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DCBE2361F0CCFB700B2E182 /* NewsFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedVC.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				9D7AE91C1F0CD963006CF66D /* UIView+Anchors.swift */,
+				9D9B91981F0D23A700065C0C /* String+Styles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9D7AE9191F0CD893006CF66D /* NewsCell.swift */,
+				9D9B91B81F0D2DDA00065C0C /* MTippy.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,7 +282,9 @@
 			files = (
 				9D7AE91D1F0CD963006CF66D /* UIView+Anchors.swift in Sources */,
 				9DCBE2371F0CCFB700B2E182 /* NewsFeedVC.swift in Sources */,
+				9D9B91B91F0D2DDA00065C0C /* MTippy.swift in Sources */,
 				9DCBE2351F0CCFB700B2E182 /* AppDelegate.swift in Sources */,
+				9D9B91991F0D23A700065C0C /* String+Styles.swift in Sources */,
 				9DCBE24C1F0CD03800B2E182 /* Article.swift in Sources */,
 				9D7AE91A1F0CD893006CF66D /* NewsCell.swift in Sources */,
 				9DE881FE1F0D0A3300BBF017 /* UIhelper.swift in Sources */,
@@ -317,6 +325,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -372,6 +382,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
