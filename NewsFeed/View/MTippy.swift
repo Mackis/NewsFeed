@@ -41,21 +41,28 @@ class MTippy: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         // Add customization here
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 4.0
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 4.0
+        view.layer.shadowOffset = CGSize(width: 0.0,height: 8.0)
     }
     
     func present(tip:String, direction: MTipDirection, toView: UIView ){
         self.alpha = 0
         toView.addSubview(self)
         tipLabel.text = tip
-        toView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: toView, attribute: .centerY, multiplier: 1.0, constant: -40.0))
-        toView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: toView, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        let difference = (toView.frame.height-self.frame.height)*1.7
+        toView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: toView, attribute: .centerY, multiplier: 1, constant: -difference))
+        toView.addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: toView, attribute: .centerX, multiplier: 1, constant: 0))
         toView.needsUpdateConstraints()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dissmissView))
         tap.delegate = self
         addGestureRecognizer(tap)
         
-        transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        transform = CGAffineTransform(scaleX: 0, y: 0.1)
         UIView.animate(withDuration: 0.3, animations: { () -> () in
             self.alpha = 1.0
             self.transform = CGAffineTransform.identity
