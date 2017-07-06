@@ -49,6 +49,11 @@ class NewsFeedVC: UIViewController {
         return button
     }()
     
+    let mTip: MTippy = {
+        let tip = MTippy()
+        return tip
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -61,7 +66,7 @@ class NewsFeedVC: UIViewController {
     }
     
     func setupViews(){
-         // 1. Add all views
+        // 1. Add all views
         view.backgroundColor = .red
         view.addSubview(backgroundImage)
         view.addSubview(collectionView)
@@ -75,8 +80,7 @@ class NewsFeedVC: UIViewController {
     }
     
     @objc func showTip(){
-        let mTip = MTippy()
-        mTip.present(.up, on: tipButton, with: "hey tippy tippy")
+        mTip.present(tip: "Hey this tip", direction: .up, toView: tipButton)
     }
     
 }

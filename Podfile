@@ -6,6 +6,6 @@ target 'NewsFeed' do
   use_frameworks!
 
   # Pods for NewsFeed
-  pod 'BonMot', '~> 4.3.1'
+  pod 'BonMot'
   pod 'Hero' , :git => 'https://github.com/lkzhao/Hero'
 end
